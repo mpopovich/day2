@@ -1,16 +1,25 @@
 #include "stdafx.h"
 #include "color.h"
-#include <windows.h> // RGB
+
+#include <windows.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace Microsoft { namespace VisualStudio { namespace CppUnitTestFramework {
-template<> static std::wstring ToString(const color& c) {
-	std::wostringstream ss;
-	ss << c.get_red() << L',' << c.get_green() << L',' << c.get_blue();
-	return ss.str();
+namespace Microsoft
+{
+  namespace VisualStudio
+  {
+    namespace CppUnitTestFramework
+    {
+      template<> static std::wstring ToString(const color& c)
+      {
+	      std::wostringstream ss;
+	      ss << c.get_red() << L',' << c.get_green() << L',' << c.get_blue();
+	      return ss.str();
+      }
+    }
+  }  
 }
-}}}
 
 namespace color_test
 {		
